@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "heroku-postbuild":"ng build --prod && npm install -g http-server-spa",
-    "start": "http-server-spa dist/angularspringcrud index.html 8080",
+    "heroku-postbuild": "ng build --prod",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -13,17 +13,22 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~9.1.6",
+    "@angular/cli": "~9.1.5",
     "@angular/common": "~9.1.6",
     "@angular/compiler": "~9.1.6",
+    "@angular/compiler-cli": "~9.1.6",
     "@angular/core": "~9.1.6",
     "@angular/forms": "~9.1.6",
     "@angular/platform-browser": "~9.1.6",
     "@angular/platform-browser-dynamic": "~9.1.6",
     "@angular/router": "~9.1.6",
     "bootstrap": "^5.0.0",
+    "express": "^4.17.1",
     "jquery": "^3.6.0",
+    "path": "^0.12.7",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
+    "typescript": "~3.8.3",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
@@ -45,5 +50,9 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~3.8.3"
+  },
+  "engines": {
+    "node": "14.16.1",
+    "npm": "6.14.12"
   }
 }
