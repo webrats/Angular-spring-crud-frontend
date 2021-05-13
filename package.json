@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "heroku-postbuild": "ng build --prod && npm install -g http-server-spa",
-    "start": "http-server-spa dist/AngularSpringCrud index.html 4200",
+    "start": "http-server-spa dist/AngularSpringCrud index.html 5000",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
