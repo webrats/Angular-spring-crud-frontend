@@ -14,7 +14,7 @@ export class EmployeeService {
   
   getEmployeeList() :Observable<Employee[]>{
     
-    return  this.httpClient.get<Employee[]>(`${this.urlPath}`) ;
+    return  this.httpClient.get<Employee[]>(`${this.urlPath}`,{ responseType:'json' }) ;
   }
 
   saveEmployee(employee: Employee) :Observable<Employee>{
