@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row my-2">
+      <div class="col-4 offset-4">
+        <h4>Create Employee</h4>
+      </div>
+    </div>
+    <div class="col-6 justify-content-center my-3 offset-3">
+        <form #createEmployeeForm="ngForm" (ngSubmit) ="createForm(createEmployeeForm)" >
+            <div class="mb-3 ">
+              <label for="exampleInputEmail1" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" name="firstName" #firstName="ngModel" ngModel  required >
+              <div id="emailHelp" *ngIf="firstName.touched && firstName.invalid" class="form-text">* Required </div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"  >Last Name</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" required name="lastName" #lastName="ngModel"  ngModel>
+              <div id="emailHelp" *ngIf="lastName.touched && lastName.invalid" class="form-text">* Required</div>
+            </div>
+            
+            <div class="mb-3 ">
+                <label for="exampleInputEmail1" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" name="emailId" #emailId="ngModel" ngModel  required email aria-describedby="emailHelp">
+                <div id="emailHelp" *ngIf="emailId.touched && emailId.invalid" class="form-text">* Required </div>
+              </div>
+        
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" required  name="terms" #terms="ngModel" ngModel  >
+              <label class="form-check-label" for="exampleCheck1">Agree Terms & Conditions</label>
+            </div>
+            <button type="submit" class="btn btn-primary d-flex-fluid" [disabled]="!createEmployeeForm.valid">Submit</button>
+          </form>
+    </div>
+</div>
